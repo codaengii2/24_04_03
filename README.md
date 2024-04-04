@@ -13,3 +13,7 @@ Currently, two official plugins are available:
 - npm install zustand
 - npm i -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
 - npm install gh-pages --save-dev
+
+## URL
+
+- https://codaengii2.github.io/24_04_03_vite_project_practice/
