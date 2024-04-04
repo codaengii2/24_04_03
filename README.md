@@ -8,3 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## npm 설치
+
+- npm install react-naver-maps
+- npm install zustand
+- npm i -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier

@@ -1,14 +1,21 @@
-import React, { useState } from "react";
-// import styled from "styled-components";
-// import { NaverMapsProvider } from "react-naver-maps";
-
-// export const MapDiv = styled.div``;
+import React, { useState } from 'react'
+// import * as Naver from 'react-naver-maps'
+// import NaverMapsProvider from 'react-naver-maps'
+import { NavermapsProvider } from 'react-naver-maps'
+import { create } from 'zustand'
+import { MyMap } from '../src/MyMap'
 
 function App() {
-  const [minutes, setMinutes] = useState("");
-  const onChange = (event) => {
-    setMinutes(event.target.value);
-  };
+  const [minutes, setMinutes] = useState('')
+  const onChange = event => {
+    setMinutes(event.target.value)
+  }
+  const useStore = create(set => ({
+    bears: 0,
+    increasePopulation: () => set(state => ({ bears: state.bears + 1 })),
+    removeAllBears: () => set({ bears: 0 }),
+    updateBears: newBears => set({ bears: newBears })
+  }))
   return (
     <>
       <div>
@@ -20,17 +27,25 @@ function App() {
           onChange={onChange}
         />
         <h4>you want to convert {minutes} </h4>
-        <input placeholder="Hours" type="number" />
+        <input
+          placeholder="Hours"
+          type="number"
+        />
       </div>
-
-      {/* <NaverMapsProvider
-        ncpClientId="MY_NAVERMAPS_CLIENT_ID"
-        // or finClientId, govClientId
-      >
+      <NavermapsProvider ncpClientId="w3i9q0pi5z">
         <MyMap />
-      </NaverMapsProvider> */}
+      </NavermapsProvider>
     </>
-  );
+  )
+}
+export function BearCounter() {
+  const bears = useStore(state => state.bears)
+  return <h1>{bears} around here...</h1>
 }
 
-export default App;
+export function Controls() {
+  const increasePopulation = useStore(state => state.increasePopulation)
+  return <button onClick={increasePopulation}>one up</button>
+}
+
+export default App
