@@ -12,3 +12,4 @@ Currently, two official plugins are available:
 - npm install react-naver-maps
 - npm install zustand
 - npm i -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
+- npm install gh-pages --save-dev
