@@ -13,6 +13,12 @@ Currently, two official plugins are available:
 - npm install zustand
 - npm i -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
 - npm install gh-pages --save-dev
+- npm install @mui/material @emotion/react @emotion/styled
+- npm install @mui/material @mui/styled-engine-sc styled-components
+- npm install @mui/icons-material
+- npm i react-router-dom
+- npm i styled-components
+- npm i styled-reset
 
 ## URL
 
